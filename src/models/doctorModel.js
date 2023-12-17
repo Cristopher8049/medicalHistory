@@ -14,7 +14,7 @@ Doctor.init({
         type: DataTypes.UUID,
         allowNull: false,
         references: {
-            model: "PersonalData",
+            model: PersonalData,
             key: "ID"
         }
     },

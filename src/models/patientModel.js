@@ -14,7 +14,7 @@ Patient.init({
         type: DataTypes.UUID,
         allowNull: false,
         references: {
-            model: "PersonalData",
+            model: PersonalData,
             key: "ID"
         }
     },
@@ -22,7 +22,7 @@ Patient.init({
         type: DataTypes.UUID,
         allowNull: true,
         references: {
-            model: "Patient",
+            model: Patient,
             key: "ID"
         }
     }
@@ -33,6 +33,7 @@ Patient.init({
 });
 
 Patient.belongsTo(PersonalData, { foreignKey: 'PERSONAL_DATA_ID' });
+PersonalData.hasOne(Patient, { foreignKey: 'ID' });
 
 Patient.belongsTo(Patient, { foreignKey: 'PARENT_ID' });
 

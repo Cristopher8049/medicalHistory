@@ -33,4 +33,8 @@ Address.init(
         tableName: "ADDRESSES",
     }
 );
+
+
+
+
 module.exports = Address;
